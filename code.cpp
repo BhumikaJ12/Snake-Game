@@ -62,7 +62,9 @@ void Draw(){
 	cout << "Press X to quit" << endl;
 }
 void Input(){
-	if(_kbhit()){
+
+	if(_kbhit()) {	
+		
 		switch(_getch()){
 			case 'A':
 			dir = Left;
@@ -83,8 +85,13 @@ void Input(){
 			case 'X':
 			Gameover = true;
 			break;
+
+			default:
+            cout<<"INVALID INPUT";
+            break;
 		}
-    }
+	}
+    
 }
 		
 void Logic(){
@@ -140,7 +147,7 @@ int main(){
 		Draw();
 		Input();
 		Logic();
-		Sleep(10);
+		Sleep(300);
 	}
 	return 0;
 }
